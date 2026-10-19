@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#04020f">
+  <title>Galaxy Striker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="stage">
+    <canvas id="gameCanvas" width="480" height="720"></canvas>
+
+    <!-- HUD -->
+    <div id="hud" class="hidden">
+      <div class="hud-top">
+        <div class="hud-block">
+          <div class="label">SCORE</div>
+          <div class="value" id="score">0</div>
+          <div class="label small">HI <span id="hiscore">0</span></div>
+        </div>
+        <div class="hud-block center">
+          <div class="label">STAGE</div>
+          <div class="value" id="stageNum">1</div>
+        </div>
+        <div class="hud-block right">
+          <div class="label">SHIPS</div>
+          <div class="value" id="lives">3</div>
+          <button id="pauseBtn" class="pause-btn" aria-label="Pause">II</button>
+        </div>
+      </div>
+      <div class="hud-bottom">
+        <div class="health-bar"><div id="healthFill"></div></div>
+        <div id="weaponInfo">WEAPON LV 1</div>
+      </div>
+    </div>
+
+    <div id="banner"></div>
+
+    <!-- Main Menu -->
+    <div id="menu" class="overlay">
+      <h1 class="title">GALAXY<br>STRIKER</h1>
+      <p class="subtitle">Defend the galaxy. Destroy the invasion.</p>
+      <button id="startBtn">START</button>
+      <p class="hint" id="controlsHint"></p>
+      <p class="hi-line">High Score: <span id="menuHi">0</span></p>
+    </div>
+
+    <!-- Pause Screen -->
+    <div id="pauseScreen" class="overlay hidden">
+      <h2>PAUSED</h2>
+      <button id="resumeBtn">RESUME</button>
+      <button id="menuBtn2" class="secondary">MAIN MENU</button>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="gameOver" class="overlay hidden">
+      <h2 class="danger">GAME OVER</h2>
+      <p class="final">Score: <span id="finalScore">0</span></p>
+      <p id="newRecord" class="record hidden">NEW HIGH SCORE!</p>
+      <button id="restartBtn">RESTART</button>
+      <button id="menuBtn" class="secondary">MAIN MENU</button>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
